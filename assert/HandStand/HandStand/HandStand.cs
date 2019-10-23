@@ -60,15 +60,16 @@ namespace HandStand
                 MotionLayerCollection layers = bones[i].Layers;
                 for(int i2 = 0; i2 < layers.Count; i2++)
                 {
-                    MotionFrameCollection frameDatas = layers[i2].Frames;
-                    for(int i3 = 0; i3 < frameDatas.Count; i3++)
+                    MotionFrameCollection frameDates = layers[i2].Frames;
+                    for(int f = 0; f < 30; f++)
                     {
-                        Vector3 pos = frameDatas[i3].Position;
-                        pos.Y = 0 - pos.Y;
-                        frameDatas[i3].Position = pos;
-                        Quaternion quaternion = frameDatas[i3].Quaternion;
-                        quaternion.Z = 180;
-                        frameDatas[i3].Quaternion = quaternion;
+                        MotionFrameData data = new MotionFrameData();
+                        data.FrameNumber = f * 10;
+                        data.Quaternion = Quaternion.RotationAxis(new Vector3(0, 0, 1), 6 * f);
+                        
+                        //Vector3 vector = frameDatas.GetFrame(f * 10).Position;
+                        //vector.Y += 10;
+                        frameDates.AddKeyFrame(data);
                     }
                 }
             }
