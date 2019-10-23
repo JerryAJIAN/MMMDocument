@@ -1,0 +1,1081 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>附录 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../chapter_1/Chapter.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../chapter_1/Chapter.html">
+            
+                <a href="../chapter_1/Chapter.html">
+            
+                    
+                    第一章
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="Chapter.html">
+            
+                <a href="Chapter.html">
+            
+                    
+                    附录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >附录</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <blockquote>
+<p>&#x672C;&#x7AE0;&#x76EE;&#x5F55;
+[TOC]</p>
+</blockquote>
+<h3 id="&#x9644;&#x5F55;">&#x9644;&#x5F55;</h3>
+<h4 id="&#x7B2C;&#x4E00;&#x6B21;&#x5B9E;&#x8DF5;&#x6E90;&#x4EE3;&#x7801;">&#x7B2C;&#x4E00;&#x6B21;&#x5B9E;&#x8DF5;&#x6E90;&#x4EE3;&#x7801;</h4>
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Drawing;
+<span class="hljs-keyword">using</span> System.Windows.Forms;
+<span class="hljs-keyword">using</span> MikuMikuPlugin;
+
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">TheFirst</span>
+{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">ShowTestDialog</span> : <span class="hljs-title">ICommandPlugin</span>    <span class="hljs-comment">//&#x547D;&#x4EE4;&#x63D2;&#x4EF6;&#x63A5;&#x53E3;</span>
+    {
+        <span class="hljs-keyword">public</span> Guid GUID    <span class="hljs-comment">//&#x6BCF;&#x4E00;&#x4E2A;&#x63D2;&#x4EF6;&#x90FD;&#x9700;&#x8981;&#x7684;&#x552F;&#x4E00;&#x8BC6;&#x522B;&#x7801;</span>
+        {
+            <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Guid(<span class="hljs-string">&quot;085e1ce9-0551-4840-b065-5016783296d7&quot;</span>); }
+        }
+
+        <span class="hljs-keyword">public</span> IWin32Window ApplicationForm <span class="hljs-comment">//&#x83B7;&#x53D6;MMM&#x672C;&#x4F53;&#x7A97;&#x53E3;&#x53E5;&#x67C4;</span>
+        {
+            <span class="hljs-keyword">get</span>;<span class="hljs-keyword">set</span>;
+        }
+
+        <span class="hljs-keyword">public</span> Scene Scene    <span class="hljs-comment">//&#x83B7;&#x53D6;&#x573A;&#x666F;&#x4E2D;&#x7684;&#x6210;&#x5458;</span>
+        {
+            <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>;
+        }
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Description   <span class="hljs-comment">//&#x63D2;&#x4EF6;&#x7684;&#x63CF;&#x8FF0;</span>
+        {
+            <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x521B;&#x5EFA;&#x63D2;&#x4EF6;&#x7684;&#x6F14;&#x793A;&#x5B9E;&#x9A8C;&#xFF01;&quot;</span>; }
+        }
+
+        <span class="hljs-keyword">public</span> Image Image  <span class="hljs-comment">//&#x63D2;&#x4EF6;&#x56FE;&#x6807;</span>
+        {
+            <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>; }
+        }
+
+        <span class="hljs-keyword">public</span> Image SmallImage <span class="hljs-comment">//&#x63D2;&#x4EF6;&#x547D;&#x4EE4;&#x680F;&#x56FE;&#x6807;</span>
+        {
+            <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>; }
+        }
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Text  <span class="hljs-comment">//&#x65E5;&#x8BED;&#x73AF;&#x5883;&#x4E0B;&#x6309;&#x94AE;&#x663E;&#x793A;&#x6587;&#x672C;</span>
+        {
+            <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;ShowTestDialog&quot;</span>; }
+        }
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> EnglishText   <span class="hljs-comment">//&#x82F1;&#x8BED;&#x73AF;&#x5883;&#x4E0B;&#x663E;&#x793A;&#x6587;&#x672C;</span>
+        {
+            <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;ShowTestDialog&quot;</span>; }
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Run</span>(<span class="hljs-params">CommandArgs e</span>)  <span class="hljs-comment">//&#x547D;&#x4EE4;&#x63D2;&#x4EF6;&#x6838;&#x5FC3;&#xFF0C;&#x6309;&#x4E0B;&#x6309;&#x94AE;&#x540E;&#x6267;&#x884C;&#x7684;&#x90E8;&#x5206;</span>
+        </span>{
+            MessageBox.Show(ApplicationForm, <span class="hljs-string">&quot;&#x8FD9;&#x662F;&#x4E00;&#x6B21;&#x521B;&#x5EFA;&#x63D2;&#x4EF6;&#x7684;&#x5B9E;&#x8DF5;&#xFF01;&quot;</span>);
+        }
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Dispose</span>(<span class="hljs-params"></span>)   <span class="hljs-comment">//&#x91CA;&#x653E;&#x63D2;&#x4EF6;&#x5185;&#x5BF9;&#x8C61;</span>
+        </span>{
+
+        }
+
+    }
+}
+</code></pre>
+<h4 id="mmmeffectheader&#x6587;&#x4EF6;">MMM_EffectHeader&#x6587;&#x4EF6;</h4>
+<pre><code class="lang-cpp"><span class="hljs-comment">/********************************************************************
+* MikuMikuMoving&#x7528;&#x30A8;&#x30D5;&#x30A7;&#x30AF;&#x30C8;&#x30D8;&#x30C3;&#x30C0;
+*********************************************************************/</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> MIKUMIKUMOVING</span>
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30B9;&#x30AD;&#x30CB;&#x30F3;&#x30B0;&#x7528;&#x884C;&#x5217;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">//&#x6700;&#x5927;&#x5024;</span>
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MMM_MaxMatrices = <span class="hljs-number">20</span>;
+<span class="hljs-comment">//&#x30E9;&#x30A4;&#x30C8;&#x6570;</span>
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MMM_LightCount = <span class="hljs-number">3</span>;
+
+float4x3 MMM_BoneMatrices[MMM_MaxMatrices]   : MMM_BONEMATRICES;    
+float4     MMM_BoneLocalQuat[MMM_MaxMatrices]  : MMM_BONELOCALQUATERNION;
+
+<span class="hljs-keyword">bool</span>     MMM_LightEnables[MMM_LightCount]     : LightEnables;
+<span class="hljs-comment">//&#x5F71;&#x306E;&#x6FC3;&#x3055;</span>
+<span class="hljs-keyword">float</span>     MMM_ShadowDeep            : SHADOWDEEP;    
+<span class="hljs-keyword">float</span>     MMM_ShadowDeepPlus        : SHADOWDEEP_POSITIVE;    
+<span class="hljs-keyword">float</span>     MMM_ShadowDeepMinus    : SHADOWDEEP_NEGATIVE;
+
+<span class="hljs-keyword">bool</span>     MMM_usetoon            : MMM_USETOON;
+<span class="hljs-keyword">float</span>     MMM_modelsize            : MMM_MODELSIZE;
+
+
+<span class="hljs-comment">//&#x30D1;&#x30FC;&#x30B9;&#x5909;&#x5F62;&#x7528;</span>
+<span class="hljs-keyword">float</span>     MMM_aspectratio        : MMM_ASPECTRATIO;
+<span class="hljs-keyword">float</span>     MMM_cameradist            : MMM_CAMERADIST;
+<span class="hljs-keyword">float</span>     MMM_startfov            : MMM_STARTFOV;
+<span class="hljs-keyword">float</span>     MMM_endfov                : MMM_ENDFOV;
+<span class="hljs-keyword">float</span>     MMM_fovcoefficient        : MMM_FOVCOEFFICIENT;
+<span class="hljs-keyword">float</span>     MMM_shadowbias            : MMM_SHADOWBIAS;
+<span class="hljs-keyword">bool</span>     MMM_IsDinamicProjection: MMM_ISDYNAMICFOV;
+
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">float</span> MMM_Epsilon = <span class="hljs-number">0.004f</span>;
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30BB;&#x30EB;&#x30D5;&#x30B7;&#x30E3;&#x30C9;&#x30A6;&#x7528;&#x30C7;&#x30D7;&#x30B9;&#x30DE;&#x30C3;&#x30D7;&#x306E;&#x30C6;&#x30AF;&#x30B9;&#x30C1;&#x30E3;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+texture MMM_SelfShadowDepthMap1   : MMM_SELFSHADOWDEPTHMAP1;
+texture MMM_SelfShadowDepthMap2   : MMM_SELFSHADOWDEPTHMAP2;
+texture MMM_SelfShadowDepthMap3   : MMM_SELFSHADOWDEPTHMAP3;
+sampler MMM_SelfShadowSampler[MMM_LightCount] = {
+    sampler_state {
+        texture = &lt;MMM_SelfShadowDepthMap1&gt;;
+        AddressU = BORDER;
+        AddressV = BORDER;
+        MINFILTER = LINEAR;
+        MAGFILTER = LINEAR;
+    },
+    sampler_state {
+        texture = &lt;MMM_SelfShadowDepthMap2&gt;;
+        AddressU = BORDER;
+        AddressV = BORDER;
+        MINFILTER = LINEAR;
+        MAGFILTER = LINEAR;
+    },
+    sampler_state {
+        texture = &lt;MMM_SelfShadowDepthMap3&gt;;
+        AddressU = BORDER;
+        AddressV = BORDER;
+        MINFILTER = LINEAR;
+        MAGFILTER = LINEAR;
+    }
+};
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30C8;&#x30A5;&#x30FC;&#x30F3;&#x30C6;&#x30AF;&#x30B9;&#x30C1;&#x30E3;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+texture MMM_ToonTexture        : MMM_ToonTexture;
+sampler MMM_ToonTexSampler = sampler_state {
+    texture = &lt;MMM_ToonTexture&gt;;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+    MINFILTER = LINEAR;
+    MAGFILTER = LINEAR;
+};
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30B9;&#x30AD;&#x30CB;&#x30F3;&#x30B0;&#x5165;&#x529B;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-keyword">struct</span> MMM_SKINNING_INPUT{
+    float4 Pos                : POSITION;
+    float4 BlendWeight        : BLENDWEIGHT;
+    float4 BlendIndices        : BLENDINDICES;
+    float3 Normal            : NORMAL;
+    float2 Tex                : TEXCOORD0;
+    float4 AddUV1            : TEXCOORD1;
+    float4 AddUV2            : TEXCOORD2;
+    float4 AddUV3            : TEXCOORD3;
+    float4 AddUV4            : TEXCOORD4;
+    float4 SdefC            : TEXCOORD5;
+    float3 SdefR0            : TEXCOORD6;
+    float3 SdefR1            : TEXCOORD7;
+    <span class="hljs-keyword">float</span>  EdgeWeight        : TEXCOORD8;
+    <span class="hljs-keyword">float</span>  Index            : PSIZE15;
+};
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30B9;&#x30AD;&#x30CB;&#x30F3;&#x30B0;&#x7528;&#x51FA;&#x529B;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-keyword">struct</span> MMM_SKINNING_OUTPUT {
+    float4 Position;    <span class="hljs-comment">// &#x5EA7;&#x6A19;</span>
+    float3 Normal;        <span class="hljs-comment">// &#x6CD5;&#x7DDA;</span>
+};
+
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30AF;&#x30A9;&#x30FC;&#x30BF;&#x30CB;&#x30AA;&#x30F3;-&gt;Matrix</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float4x4 <span class="hljs-title">MMM_QuaternionToMatrix</span><span class="hljs-params">(float4 quat)</span>
+</span>{
+    float4x4 mat;
+
+    <span class="hljs-keyword">float</span> xy = quat.x * quat.y;
+    <span class="hljs-keyword">float</span> zz = quat.z * quat.z;
+    <span class="hljs-keyword">float</span> wx = quat.w * quat.x;
+    <span class="hljs-keyword">float</span> wy = quat.w * quat.y;
+    <span class="hljs-keyword">float</span> yz = quat.y * quat.z;
+    <span class="hljs-keyword">float</span> wz = quat.w * quat.z;
+
+    mat._11 = <span class="hljs-number">1.0f</span> - <span class="hljs-number">2.0f</span> * quat.y * quat.y - <span class="hljs-number">2.0f</span> * zz;
+    mat._12 = <span class="hljs-number">2.0f</span> * xy + <span class="hljs-number">2.0f</span> * wz;
+    mat._13 = <span class="hljs-number">2.0f</span> * quat.x * quat.z - <span class="hljs-number">2.0f</span> * wy;
+    mat._14 = <span class="hljs-number">0</span>;
+
+    mat._21 = <span class="hljs-number">2.0f</span> * xy - <span class="hljs-number">2.0f</span> * wz;
+    mat._22 = <span class="hljs-number">1.0f</span> - <span class="hljs-number">2.0f</span> * quat.x * quat.x - <span class="hljs-number">2.0f</span> * zz;
+    mat._23 = <span class="hljs-number">2.0f</span> * yz + <span class="hljs-number">2.0f</span> * wx;
+    mat._24 = <span class="hljs-number">0</span>;
+
+    mat._31 = <span class="hljs-number">2.0f</span> * quat.x * quat.z + <span class="hljs-number">2.0f</span> * wy;
+    mat._32 = <span class="hljs-number">2.0f</span> * yz - <span class="hljs-number">2.0f</span> * wx;
+    mat._33 = <span class="hljs-number">1.0f</span> - <span class="hljs-number">2.0f</span> * quat.x * quat.x - <span class="hljs-number">2.0f</span> * quat.y * quat.y;
+    mat._34 = <span class="hljs-number">0</span>;
+
+    mat._41 = <span class="hljs-number">0</span>;
+    mat._42 = <span class="hljs-number">0</span>;
+    mat._43 = <span class="hljs-number">0</span>;
+    mat._44 = <span class="hljs-number">1.0f</span>;
+
+    <span class="hljs-keyword">return</span> mat;
+}
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// Qlerp</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float4 <span class="hljs-title">MMM_Qlerp</span><span class="hljs-params">(float4 q1, float4 q2, <span class="hljs-keyword">float</span> t)</span>
+</span>{
+    float4 quat, q1t;
+
+    <span class="hljs-keyword">float</span> rad = q1.w * q2.w + q1.x * q2.x + q1.y * q2.y + q1.z * q2.z;
+
+    <span class="hljs-keyword">if</span> (rad &lt; <span class="hljs-number">0</span>)
+    {
+        t = -t;
+        q1t = q1;
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        q1t = -q1;
+    }
+    quat = q1 + (q2 + q1t) * t;
+
+    <span class="hljs-keyword">float</span> n = <span class="hljs-built_in">sqrt</span>(quat.x * quat.x + quat.y * quat.y + quat.z * quat.z + quat.w * quat.w);
+
+    <span class="hljs-keyword">if</span> (n &gt; <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">float</span> s = <span class="hljs-number">1.0f</span> / n;
+        quat = quat * s;
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        quat = float4(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>);
+    }
+
+    <span class="hljs-keyword">return</span> quat;
+}
+<span class="hljs-function">float4 <span class="hljs-title">MMM_Qlerp_Identity</span><span class="hljs-params">(float4 q2, <span class="hljs-keyword">float</span> t)</span>
+</span>{
+    <span class="hljs-keyword">float</span> tt;
+    float4 quat;
+
+    <span class="hljs-keyword">if</span> (q2.w &lt; <span class="hljs-number">0</span>)
+    {
+        t = -t;
+        tt = <span class="hljs-number">1.0</span>;
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        tt = <span class="hljs-number">-1.0</span>;
+    }
+    quat.xyz = t * q2.xyz;
+    quat.w = <span class="hljs-number">1.0</span> + t * (q2.w + tt);
+
+    <span class="hljs-keyword">float</span> n = <span class="hljs-built_in">sqrt</span>(quat.x * quat.x + quat.y * quat.y + quat.z * quat.z + quat.w * quat.w);
+
+    <span class="hljs-keyword">if</span> (n &gt; <span class="hljs-number">0</span>)
+    {
+        <span class="hljs-keyword">float</span> s = <span class="hljs-number">1.0f</span> / n;
+        quat = quat * s;
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        quat = float4(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1.0</span>);
+    }
+
+    <span class="hljs-keyword">return</span> quat;
+}
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// Slerp</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float4 <span class="hljs-title">MMM_Slerp</span><span class="hljs-params">(float4 q1, float4 q2, <span class="hljs-keyword">float</span> t)</span>
+</span>{
+    float4 quat;
+
+    <span class="hljs-keyword">float</span> opposite, inverse;
+    <span class="hljs-keyword">float</span> tt = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">float</span> dot = q1.w * q2.w + q1.x * q2.x + q1.y * q2.y + q1.z * q2.z;
+
+    <span class="hljs-keyword">if</span> (dot &lt; <span class="hljs-number">0</span>)
+    {
+        tt = <span class="hljs-number">-1</span>;
+        dot = -dot;
+    }
+
+    <span class="hljs-keyword">if</span> (dot &gt; <span class="hljs-number">0.999999</span>)
+    {
+        inverse = <span class="hljs-number">1.0</span> - t;
+        opposite = t * tt;
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-keyword">float</span> acosf = <span class="hljs-built_in">acos</span>(dot);
+        <span class="hljs-keyword">float</span> invSin = <span class="hljs-number">1.0</span> / <span class="hljs-built_in">sin</span>(acosf);
+
+        inverse = <span class="hljs-built_in">sin</span>((<span class="hljs-number">1.0</span> - t) * acosf) * invSin;
+        opposite = <span class="hljs-built_in">sin</span>(t * acosf) * invSin * tt;
+    }
+
+    <span class="hljs-keyword">return</span> float4(inverse * q1.x + opposite * q2.x, inverse * q1.y + opposite * q2.y, inverse * q1.z + opposite * q2.z, inverse * q1.w + opposite * q2.w);
+}
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// Multiply Quaternion</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float4 <span class="hljs-title">mul_quat</span><span class="hljs-params">(float4 q0, float4 q1)</span>
+</span>{
+    <span class="hljs-keyword">return</span> float4(q0.w * q1.x + q0.x * q1.w + q0.y * q1.z - q0.z * q1.y,
+                  q0.w * q1.y - q0.x * q1.z + q0.y * q1.w + q0.z * q1.x,
+                  q0.w * q1.z + q0.x * q1.y - q0.y * q1.x + q0.z * q1.w,
+                  q0.w * q1.w - q0.x * q1.x - q0.y * q1.y - q0.z * q1.z);
+}
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// Dual Quaternion To Matrix</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float3x4 <span class="hljs-title">DQToMatrix</span><span class="hljs-params">(float4 Qn, float4 Qd)</span>
+</span>{    
+    float3x4 M;
+    <span class="hljs-keyword">float</span> len2 = dot(Qn, Qn);
+    <span class="hljs-keyword">float</span> w = Qn.x, x = Qn.y, y = Qn.z, z = Qn.w;
+    <span class="hljs-keyword">float</span> t0 = Qd.x, t1 = Qd.y, t2 = Qd.z, t3 = Qd.w;
+
+    M[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = w*w + x*x - y*y - z*z; M[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">2</span>*x*y - <span class="hljs-number">2</span>*w*z; M[<span class="hljs-number">0</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">2</span>*x*z + <span class="hljs-number">2</span>*w*y;
+    M[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">2</span>*x*y + <span class="hljs-number">2</span>*w*z; M[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = w*w + y*y - x*x - z*z; M[<span class="hljs-number">1</span>][<span class="hljs-number">2</span>] = <span class="hljs-number">2</span>*y*z - <span class="hljs-number">2</span>*w*x; 
+    M[<span class="hljs-number">2</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">2</span>*x*z - <span class="hljs-number">2</span>*w*y; M[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">2</span>*y*z + <span class="hljs-number">2</span>*w*x; M[<span class="hljs-number">2</span>][<span class="hljs-number">2</span>] = w*w + z*z - x*x - y*y;
+
+    M[<span class="hljs-number">0</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">-2</span>*t0*x + <span class="hljs-number">2</span>*w*t1 - <span class="hljs-number">2</span>*t2*z + <span class="hljs-number">2</span>*y*t3;
+    M[<span class="hljs-number">1</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">-2</span>*t0*y + <span class="hljs-number">2</span>*t1*z - <span class="hljs-number">2</span>*x*t3 + <span class="hljs-number">2</span>*w*t2;
+    M[<span class="hljs-number">2</span>][<span class="hljs-number">3</span>] = <span class="hljs-number">-2</span>*t0*z + <span class="hljs-number">2</span>*x*t2 + <span class="hljs-number">2</span>*w*t3 - <span class="hljs-number">2</span>*t1*y;
+
+    M /= len2;
+
+    <span class="hljs-keyword">return</span> M;    
+}
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30D1;&#x30FC;&#x30B9;&#x5909;&#x5F62;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">MMM_GetDynamicFovValue</span><span class="hljs-params">(<span class="hljs-keyword">float</span> dist)</span>
+</span>{
+    <span class="hljs-keyword">float</span> d = <span class="hljs-built_in">pow</span>(clamp(<span class="hljs-built_in">abs</span>(dist), <span class="hljs-number">0</span>, MMM_cameradist) / MMM_cameradist, MMM_fovcoefficient);    <span class="hljs-comment">//&#x8DDD;&#x96E2;</span>
+    <span class="hljs-keyword">return</span> lerp(MMM_startfov, MMM_endfov, <span class="hljs-number">1.0</span> / (<span class="hljs-number">1.0</span> + <span class="hljs-built_in">exp</span>(-d * <span class="hljs-number">12.0</span> + <span class="hljs-number">6.0</span>)));    <span class="hljs-comment">//FOV&#x306E;&#x8A08;&#x7B97;</span>
+}
+<span class="hljs-function">float4x4 <span class="hljs-title">MMM_DynamicFov</span><span class="hljs-params">(float4x4 PMatrix, <span class="hljs-keyword">float</span> dist)</span>
+</span>{
+    <span class="hljs-keyword">float</span> fov = MMM_GetDynamicFovValue(dist);
+
+    <span class="hljs-comment">// Projection&#x884C;&#x5217;&#x306B;&#x53CD;&#x6620;</span>
+    PMatrix._22 = <span class="hljs-number">1.0f</span> / <span class="hljs-built_in">tan</span>( fov / <span class="hljs-number">2.0f</span> );
+    PMatrix._11 = PMatrix._22 / MMM_aspectratio;
+
+    <span class="hljs-keyword">return</span> PMatrix;
+}
+<span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">MMM_GetDynamicFovEdgeRate</span><span class="hljs-params">(<span class="hljs-keyword">float</span> dist)</span>
+</span>{
+    <span class="hljs-keyword">return</span> MMM_GetDynamicFovValue(dist) / MMM_endfov;
+}
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30B9;&#x30AD;&#x30CB;&#x30F3;&#x30B0;&#x5F8C;&#x306E;&#x9802;&#x70B9;&#x5EA7;&#x6A19;&#x3068;&#x6CD5;&#x7DDA;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;(BDEF&#x306E;&#x307F;)</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">MMM_SKINNING_OUTPUT <span class="hljs-title">MMM_BDEFPositionNormal</span><span class="hljs-params">(float4 Position, float3 Normal, float4 BlendWeight, float4 BlendIndices)</span>
+</span>{
+    MMM_SKINNING_OUTPUT Out = (MMM_SKINNING_OUTPUT)<span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">//&#x30A6;&#x30A7;&#x30A4;&#x30C8;&#x3092;&#x53CD;&#x6620;</span>
+    <span class="hljs-keyword">float</span> blendWeights[<span class="hljs-number">3</span>] = (<span class="hljs-keyword">float</span>[<span class="hljs-number">3</span>])BlendWeight;
+
+    float3 pos = <span class="hljs-number">0.0f</span>;
+    float3 nml = <span class="hljs-number">0.0f</span>;
+
+    <span class="hljs-keyword">float</span> lastWeight = <span class="hljs-number">0.0f</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++)
+    {
+        lastWeight += blendWeights[i];
+        pos += mul(Position, MMM_BoneMatrices[BlendIndices[i]]) * blendWeights[i];
+        nml += mul(Normal, MMM_BoneMatrices[BlendIndices[i]]) * blendWeights[i];
+    }
+    lastWeight = <span class="hljs-number">1.0f</span> - lastWeight;
+    pos += mul(Position, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">3</span>]]) * lastWeight;
+    nml += mul(Normal, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">3</span>]]) * lastWeight;
+
+    Out.Position = float4(pos, <span class="hljs-number">1.0f</span>);
+    Out.Normal = nml;
+
+    <span class="hljs-keyword">return</span> Out;
+}
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30B9;&#x30AD;&#x30CB;&#x30F3;&#x30B0;&#x5F8C;&#x306E;&#x9802;&#x70B9;&#x5EA7;&#x6A19;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;(BDEF&#x306E;&#x307F;)</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float4 <span class="hljs-title">MMM_BDEFPosition</span><span class="hljs-params">(float4 Position, float4 BlendWeight, float4 BlendIndices)</span>
+</span>{
+    <span class="hljs-comment">//&#x30A6;&#x30A7;&#x30A4;&#x30C8;&#x3092;&#x53CD;&#x6620;</span>
+    <span class="hljs-keyword">float</span> blendWeights[<span class="hljs-number">3</span>] = (<span class="hljs-keyword">float</span>[<span class="hljs-number">3</span>])BlendWeight;
+
+    float3 pos = <span class="hljs-number">0.0f</span>;
+
+    <span class="hljs-keyword">float</span> lastWeight = <span class="hljs-number">0.0f</span>;
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++)
+    {
+        lastWeight += blendWeights[i];
+        pos += mul(Position, MMM_BoneMatrices[BlendIndices[i]]) * blendWeights[i];
+    }
+    lastWeight = <span class="hljs-number">1.0f</span> - lastWeight;
+    pos += mul(Position, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">3</span>]]) * lastWeight;
+
+    <span class="hljs-keyword">return</span> float4(pos, <span class="hljs-number">1.0f</span>);
+}
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30B9;&#x30AD;&#x30CB;&#x30F3;&#x30B0;&#x5F8C;&#x306E;&#x9802;&#x70B9;&#x5EA7;&#x6A19;&#x3068;&#x6CD5;&#x7DDA;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">MMM_SKINNING_OUTPUT <span class="hljs-title">MMM_SkinnedPositionNormal_Internal</span><span class="hljs-params">(float4 Position, float3 Normal, float4 BlendWeight, float4 BlendIndices, float4 SdefC, float3 SdefR0, float3 SdefR1)</span>
+</span>{
+    MMM_SKINNING_OUTPUT Out = (MMM_SKINNING_OUTPUT)<span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">//&#x30A6;&#x30A7;&#x30A4;&#x30C8;&#x3092;&#x53CD;&#x6620;</span>
+    <span class="hljs-keyword">float</span> blendWeights[<span class="hljs-number">3</span>] = (<span class="hljs-keyword">float</span>[<span class="hljs-number">3</span>])BlendWeight;
+
+    float3 pos = <span class="hljs-number">0.0f</span>;
+    float3 nml = <span class="hljs-number">0.0f</span>;
+
+    <span class="hljs-keyword">if</span> (SdefC.w &gt;= <span class="hljs-number">0</span>)
+    {
+        float4 center = float4(SdefC.xyz, <span class="hljs-number">1.0f</span>);
+        float4 r0 = float4(SdefR0, <span class="hljs-number">1.0f</span>);
+        float4 r1 = float4(SdefR1, <span class="hljs-number">1.0f</span>);
+
+        float3 pp0 = mul(r0, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">0</span>]]);
+        float3 pp1 = mul(r1, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">1</span>]]);
+
+        float3 prc = pp0 * blendWeights[<span class="hljs-number">0</span>] + pp1 * blendWeights[<span class="hljs-number">1</span>];
+
+        float3 v1, diff;
+
+        v1 = mul(center, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">0</span>]]);
+        diff = (v1 - center) * blendWeights[<span class="hljs-number">0</span>];
+
+        v1 = mul(center, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">1</span>]]);
+        diff += (v1 - center) * blendWeights[<span class="hljs-number">1</span>];
+
+        float3 trans = center + diff;
+        trans = (trans + prc) * <span class="hljs-number">0.5</span>;
+
+        float4 quat = MMM_Slerp(MMM_BoneLocalQuat[BlendIndices[<span class="hljs-number">0</span>]], MMM_BoneLocalQuat[BlendIndices[<span class="hljs-number">1</span>]], blendWeights[<span class="hljs-number">1</span>]);
+        float4x4 mat = MMM_QuaternionToMatrix(quat);
+
+        pos = mul(Position - center, mat) * MMM_modelsize + trans;
+        nml = mul(Normal, mat) * MMM_modelsize;
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-keyword">float</span> lastWeight = <span class="hljs-number">0.0f</span>;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++)
+        {
+            lastWeight += blendWeights[i];
+            pos += mul(Position, MMM_BoneMatrices[BlendIndices[i]]) * blendWeights[i];
+            nml += mul(Normal, MMM_BoneMatrices[BlendIndices[i]]) * blendWeights[i];
+        }
+        lastWeight = <span class="hljs-number">1.0f</span> - lastWeight;
+        pos += mul(Position, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">3</span>]]) * lastWeight;
+        nml += mul(Normal, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">3</span>]]) * lastWeight;
+    }
+
+    Out.Position = float4(pos, <span class="hljs-number">1.0f</span>);
+    Out.Normal = nml;
+
+    <span class="hljs-keyword">return</span> Out;
+}
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30B9;&#x30AD;&#x30CB;&#x30F3;&#x30B0;&#x5F8C;&#x306E;&#x9802;&#x70B9;&#x5EA7;&#x6A19;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float4 <span class="hljs-title">MMM_SkinnedPosition_Internal</span><span class="hljs-params">(float4 Position, float4 BlendWeight, float4 BlendIndices, float4 SdefC, float3 SdefR0, float3 SdefR1)</span>
+</span>{
+    <span class="hljs-comment">//&#x30A6;&#x30A7;&#x30A4;&#x30C8;&#x3092;&#x53CD;&#x6620;</span>
+    <span class="hljs-keyword">float</span> blendWeights[<span class="hljs-number">3</span>] = (<span class="hljs-keyword">float</span>[<span class="hljs-number">3</span>])BlendWeight;
+
+    float3 pos = <span class="hljs-number">0.0f</span>;
+
+    <span class="hljs-keyword">if</span> (SdefC.w &gt;= <span class="hljs-number">0</span>)
+    {
+        float4 center = float4(SdefC.xyz, <span class="hljs-number">1.0f</span>);
+        float4 r0 = float4(SdefR0, <span class="hljs-number">1.0f</span>);
+        float4 r1 = float4(SdefR1, <span class="hljs-number">1.0f</span>);
+
+        float3 pp0 = mul(r0, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">0</span>]]);
+        float3 pp1 = mul(r1, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">1</span>]]);
+
+        float3 prc = pp0 * blendWeights[<span class="hljs-number">0</span>] + pp1 * blendWeights[<span class="hljs-number">1</span>];
+
+        float3 v1, diff;
+
+        v1 = mul(center, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">0</span>]]);
+        diff = (v1 - center) * blendWeights[<span class="hljs-number">0</span>];
+
+        v1 = mul(center, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">1</span>]]);
+        diff += (v1 - center) * blendWeights[<span class="hljs-number">1</span>];
+
+        float3 trans = center + diff;
+        trans = (trans + prc) * <span class="hljs-number">0.5</span>;
+
+        float4 quat = MMM_Slerp(MMM_BoneLocalQuat[BlendIndices[<span class="hljs-number">0</span>]], MMM_BoneLocalQuat[BlendIndices[<span class="hljs-number">1</span>]], blendWeights[<span class="hljs-number">1</span>]);
+        float4x4 mat = MMM_QuaternionToMatrix(quat);
+
+        pos = mul(Position - center, mat) * MMM_modelsize + trans;
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-keyword">float</span> lastWeight = <span class="hljs-number">0.0f</span>;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++)
+        {
+            lastWeight += blendWeights[i];
+            pos += mul(Position, MMM_BoneMatrices[BlendIndices[i]]) * blendWeights[i];
+        }
+        lastWeight = <span class="hljs-number">1.0f</span> - lastWeight;
+        pos += mul(Position, MMM_BoneMatrices[BlendIndices[<span class="hljs-number">3</span>]]) * lastWeight;
+    }
+
+    <span class="hljs-keyword">return</span> float4(pos, <span class="hljs-number">1.0f</span>);
+}
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30A8;&#x30D5;&#x30A7;&#x30AF;&#x30C8;&#x7528;(&#x30A2;&#x30AF;&#x30BB;&#x30B5;&#x30EA;&#x517C;&#x7528;)</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">MMM_SKINNING_OUTPUT <span class="hljs-title">MMM_SkinnedPositionNormal</span><span class="hljs-params">(float4 Position, float3 Normal, float4 BlendWeight, float4 BlendIndices, float4 SdefC, float3 SdefR0, float3 SdefR1)</span>
+</span>{
+    MMM_SKINNING_OUTPUT Out;
+
+    <span class="hljs-keyword">if</span> (MMM_usetoon)
+    {
+        Out = MMM_SkinnedPositionNormal_Internal(Position, Normal, BlendWeight, BlendIndices, SdefC, SdefR0, SdefR1);
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        Out.Position = Position;
+        Out.Normal = Normal;
+    }
+    <span class="hljs-keyword">return</span> Out;
+}
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30A8;&#x30D5;&#x30A7;&#x30AF;&#x30C8;&#x7528;(&#x30A2;&#x30AF;&#x30BB;&#x30B5;&#x30EA;&#x517C;&#x7528;)</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">MMM_SKINNING_OUTPUT <span class="hljs-title">MMM_SkinninedPositionNormal</span><span class="hljs-params">(float4 Position, float3 Normal, float4 BlendWeight, float4 BlendIndices, float4 SdefC, float3 SdefR0, float3 SdefR1)</span>
+</span>{
+    <span class="hljs-keyword">return</span> MMM_SkinnedPositionNormal(Position, Normal, BlendWeight, BlendIndices, SdefC, SdefR0, SdefR1);
+}
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30A8;&#x30D5;&#x30A7;&#x30AF;&#x30C8;&#x7528;(&#x30A2;&#x30AF;&#x30BB;&#x30B5;&#x30EA;&#x517C;&#x7528;)</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float4 <span class="hljs-title">MMM_SkinnedPosition</span><span class="hljs-params">(float4 Position, float4 BlendWeight, float4 BlendIndices, float4 SdefC, float3 SdefR0, float3 SdefR1)</span>
+</span>{
+    float4 Out;
+
+    <span class="hljs-keyword">if</span> (MMM_usetoon)
+    {
+        Out = MMM_SkinnedPosition_Internal(Position, BlendWeight, BlendIndices, SdefC, SdefR0, SdefR1);
+    }
+    <span class="hljs-keyword">else</span>
+    {
+        Out = Position;
+    }
+    <span class="hljs-keyword">return</span> Out;
+}
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x6CD5;&#x7DDA;&#x30FB;&#x6DF1;&#x5EA6;&#x306E;&#x30D1;&#x30C3;&#x30AF;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float4    <span class="hljs-title">MMM_PackDepthNormal</span><span class="hljs-params">( <span class="hljs-keyword">float</span> z, float3 normal )</span>
+</span>{
+    <span class="hljs-comment">//float4    output;</span>
+
+    <span class="hljs-comment">//float packz, packw;</span>
+    <span class="hljs-comment">//packw = modf(z * 255.0, packz);</span>
+    <span class="hljs-comment">//output = float4( normal.x, normal.y, packz / 255.0, packw );</span>
+
+    <span class="hljs-keyword">return</span> float4(z, normal);
+}
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x6DF1;&#x5EA6;&#x306E;&#x30D1;&#x30C3;&#x30AF;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float4 <span class="hljs-title">MMM_PackDepth</span><span class="hljs-params">( <span class="hljs-keyword">float</span> z )</span>
+</span>{
+    <span class="hljs-comment">//float packz, packw;</span>
+    <span class="hljs-comment">//packw = modf(z * 255.0, packz);</span>
+
+    <span class="hljs-comment">//xy : 2&#x4E57;&#x3001;zw : &#x6DF1;&#x5EA6;</span>
+    <span class="hljs-comment">//return float4( packz / 255.0, packw, 0, 1.0 );</span>
+
+    <span class="hljs-keyword">return</span> float4(z, <span class="hljs-number">1.0f</span>, <span class="hljs-number">1.0f</span>, <span class="hljs-number">1.0f</span>);
+}
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x6DF1;&#x5EA6;&#x306E;&#x30D1;&#x30C3;&#x30AF;(&#x6D6E;&#x52D5;&#x5C0F;&#x6570;&#x70B9;)</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float4 <span class="hljs-title">MMM_PackDepth_F</span><span class="hljs-params">( <span class="hljs-keyword">float</span> z )</span>
+</span>{
+    <span class="hljs-keyword">return</span> float4( z, z * z, <span class="hljs-number">0</span>, <span class="hljs-number">1.0</span> );
+}
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x8A73;&#x7D30;&#x6DF1;&#x5EA6;&#x306E;&#x30D1;&#x30C3;&#x30AF;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float4 <span class="hljs-title">MMM_PackDetailedDepth</span><span class="hljs-params">( <span class="hljs-keyword">float</span> z )</span>
+</span>{
+    float4 depth = float4(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">255.0f</span>, <span class="hljs-number">255.0f</span>);
+    depth.g = <span class="hljs-built_in">modf</span>(z * <span class="hljs-number">255.0f</span>, depth.r);
+    depth.b *= <span class="hljs-built_in">modf</span>(depth.g * <span class="hljs-number">255.0f</span>, depth.g);
+    <span class="hljs-keyword">return</span> depth / <span class="hljs-number">255.0f</span>;
+}
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x6CD5;&#x7DDA;&#x30FB;&#x6DF1;&#x5EA6;&#x306E;&#x30A2;&#x30F3;&#x30D1;&#x30C3;&#x30AF;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">MMM_UnpackDepthNormal</span><span class="hljs-params">( out <span class="hljs-keyword">float</span> z, out float3 normal, float4 input )</span>
+</span>{
+    <span class="hljs-comment">//normal.xy = input.xy;</span>
+    <span class="hljs-comment">//normal.z = -sqrt( 1 - input.x * input.x - input.y * input.y );</span>
+    <span class="hljs-comment">//z = input.z + input.w / 255.0;</span>
+    z = input.x;
+    normal = float3(input.y, input.z, input.w);
+}
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x6DF1;&#x5EA6;&#x306E;&#x30A2;&#x30F3;&#x30D1;&#x30C3;&#x30AF;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">MMM_UnpackDepth</span><span class="hljs-params">(float4 input )</span>
+</span>{
+    <span class="hljs-comment">//return input.x + input.y / 255.0;</span>
+    <span class="hljs-keyword">return</span> input.x;
+}
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x6DF1;&#x5EA6;&#x306E;&#x30A2;&#x30F3;&#x30D1;&#x30C3;&#x30AF;(&#x6D6E;&#x52D5;&#x5C0F;&#x6570;&#x70B9;)</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">MMM_UnpackDepth_F</span><span class="hljs-params">(float4 input )</span>
+</span>{
+    <span class="hljs-keyword">return</span> input.x;
+}
+<span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">MMM_UnpackDepthSq_F</span><span class="hljs-params">(float4 input )</span>
+</span>{
+    <span class="hljs-keyword">return</span> input.y;
+}
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x8A73;&#x7D30;&#x6DF1;&#x5EA6;&#x306E;&#x30A2;&#x30F3;&#x30D1;&#x30C3;&#x30AF;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function"><span class="hljs-keyword">float</span> <span class="hljs-title">MMM_UnpackDetailedDepth</span><span class="hljs-params">(float4 input )</span>
+</span>{
+    <span class="hljs-keyword">return</span> input.r + (input.g + input.b / <span class="hljs-number">255.0f</span>) / <span class="hljs-number">255.0f</span>;
+}
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x6CD5;&#x7DDA;&#x306E;&#x30A2;&#x30F3;&#x30D1;&#x30C3;&#x30AF;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float3 <span class="hljs-title">MMM_UnpackNormal</span><span class="hljs-params">(float4 input )</span>
+</span>{
+    float3 normal;
+    normal.xy = input.xy;
+    normal.z = -<span class="hljs-built_in">sqrt</span>( <span class="hljs-number">1</span> - input.x * input.x - input.y * input.y );
+
+    <span class="hljs-keyword">return</span> normal;
+}
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30C8;&#x30A5;&#x30FC;&#x30F3;&#x306E;&#x8272;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float3 <span class="hljs-title">MMM_GetToonColor</span><span class="hljs-params">(float4 MaterialToon, float3 Normal, float3 LightDirection0, float3 LightDirection1, float3 LightDirection2)</span>
+</span>{
+    float3 shadow = float3(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>);
+    float3 LightDirection[MMM_LightCount];
+    <span class="hljs-keyword">float</span> LightNormal;
+    float3 leapcolor = lerp(MaterialToon * MMM_ShadowDeepPlus, <span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span> - MMM_ShadowDeepMinus);
+
+    LightDirection[<span class="hljs-number">0</span>] = LightDirection0;
+    LightDirection[<span class="hljs-number">1</span>] = LightDirection1;
+    LightDirection[<span class="hljs-number">2</span>] = LightDirection2;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; MMM_LightCount; i++)
+    {
+        <span class="hljs-keyword">if</span> (MMM_LightEnables[i])
+        {
+            LightNormal = dot( Normal, -LightDirection[i] );
+            shadow *= lerp(leapcolor, float3(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>), saturate(LightNormal * <span class="hljs-number">16</span> + <span class="hljs-number">0.5</span>));
+        }
+    }
+
+    <span class="hljs-keyword">return</span> shadow;
+}
+
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-comment">// &#x30BB;&#x30EB;&#x30D5;&#x30B7;&#x30E3;&#x30C9;&#x30A6;&#x6709;&#x52B9;&#x6642;&#x306E;&#x30C8;&#x30A5;&#x30FC;&#x30F3;&#x306E;&#x8272;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;</span>
+<span class="hljs-comment">//////////////////////////////////////////////</span>
+<span class="hljs-function">float3 <span class="hljs-title">MMM_GetSelfShadowToonColor</span><span class="hljs-params">(float4 MaterialToon, float3 Normal, float4 LightUV1, float4 LightUV2, float4 LightUV3, uniform <span class="hljs-keyword">bool</span> useSoftShadow, uniform <span class="hljs-keyword">bool</span> useToon)</span>
+</span>{
+    float3 color = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">float</span> smz, tm;
+    float2 texcoord;
+    float4 uv[<span class="hljs-number">3</span>];
+    float4 d;
+    float3 tt;
+
+    uv[<span class="hljs-number">0</span>] = LightUV1;
+    uv[<span class="hljs-number">1</span>] = LightUV2;
+    uv[<span class="hljs-number">2</span>] = LightUV3;
+
+    <span class="hljs-keyword">if</span> (useToon)
+    {
+        <span class="hljs-comment">//&#x30AD;&#x30E3;&#x30E9;&#x30AF;&#x30BF;&#x306E;&#x30BB;&#x30EB;&#x30D5;&#x30B7;&#x30E3;&#x30C9;&#x30A6;&#x51E6;&#x7406;</span>
+        <span class="hljs-keyword">if</span> (useSoftShadow)
+        {
+            float4 depth;
+            <span class="hljs-keyword">float</span> dd, variance, dx, depth_sq, md, lit_fact;
+            [unroll(<span class="hljs-number">3</span>)]
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; MMM_LightCount; i++)
+            {
+                <span class="hljs-keyword">if</span> (MMM_LightEnables[i])
+                {
+                    dd = uv[i].z;
+                    texcoord.xy = (<span class="hljs-number">1.0f</span> + uv[i].xy) * <span class="hljs-number">0.5f</span>;
+                    tt.xy = <span class="hljs-number">1.0f</span> - saturate((uv[i].xy * uv[i].xy - <span class="hljs-number">0.8f</span>) / <span class="hljs-number">0.2f</span>);
+
+                    depth = tex2D(MMM_SelfShadowSampler[i], texcoord);
+                    dx = MMM_UnpackDepth_F(depth);
+
+                    lit_fact = (dd &lt;= dx);
+
+                    depth_sq = dx * dx;
+                    variance = saturate(MMM_UnpackDepthSq_F(depth) + MMM_Epsilon - depth_sq) * dd * dd;
+                    md = dd - dx;
+                    smz = variance / (variance + md * md);
+
+                    smz = <span class="hljs-number">1.0</span> - max(lit_fact, <span class="hljs-built_in">pow</span>(smz, <span class="hljs-number">2000</span>));
+                    tm = <span class="hljs-number">1.0</span> - smz * MMM_ShadowDeepMinus * tt.x * tt.y;
+                    color *= lerp(tm, <span class="hljs-number">1.0</span>, MaterialToon * MMM_ShadowDeepPlus);
+                }
+            }
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            [unroll(<span class="hljs-number">3</span>)]
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; MMM_LightCount; i++)
+            {
+                <span class="hljs-keyword">if</span> (MMM_LightEnables[i])
+                {
+                    tm = uv[i].z;
+                    uv[i].xy = uv[i].xy / uv[i].w;
+                    texcoord.xy = (<span class="hljs-number">1.0f</span> + uv[i].xy) * <span class="hljs-number">0.5f</span>;
+                    tt.xy = <span class="hljs-number">1.0f</span> - saturate((uv[i].xy * uv[i].xy - <span class="hljs-number">0.8f</span>) / <span class="hljs-number">0.2f</span>);
+
+                    d = tex2D(MMM_SelfShadowSampler[i], texcoord);
+                    smz = MMM_UnpackDepth(d) + <span class="hljs-number">0.00002</span>;
+
+                    <span class="hljs-keyword">if</span> (tm &gt; smz)
+                    {
+                        tm = <span class="hljs-number">1.0</span> - saturate((tm - smz) * <span class="hljs-number">6000.0f</span>) * MMM_ShadowDeepMinus * tt.x * tt.y;
+                        color *= lerp(tm, <span class="hljs-number">1.0</span>, MaterialToon * MMM_ShadowDeepPlus);
+                    }
+                }
+            }
+        }
+    }
+    <span class="hljs-keyword">else</span>
+    {
+
+
+        <span class="hljs-comment">// &#x30A2;&#x30AF;&#x30BB;&#x30B5;&#x30EA;&#x306E;&#x30BB;&#x30EB;&#x30D5;&#x30B7;&#x30E3;&#x30C9;&#x30A6;&#x51E6;&#x7406;</span>
+        <span class="hljs-keyword">if</span> (useSoftShadow)
+        {
+            float4 depth;
+            <span class="hljs-keyword">float</span> dd, variance, dx, depth_sq, md, lit_fact;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++)
+            {
+                <span class="hljs-keyword">if</span> (MMM_LightEnables[i])
+                {
+                    dd = uv[i].z;
+                    texcoord.xy = (<span class="hljs-number">1.0f</span> + uv[i].xy) * <span class="hljs-number">0.5f</span>;
+                    tt.xy = <span class="hljs-number">1.0f</span> - saturate((uv[i].xy * uv[i].xy - <span class="hljs-number">0.8f</span>) / <span class="hljs-number">0.2f</span>);
+
+                    depth = tex2D(MMM_SelfShadowSampler[i], texcoord);
+                    dx = MMM_UnpackDepth_F(depth);
+
+                    lit_fact = (dd &lt;= dx);
+
+                    depth_sq = dx * dx;
+                    variance = saturate(MMM_UnpackDepthSq_F(depth) + MMM_Epsilon - depth_sq) * dd * dd;
+                    md = dd - dx;
+                    smz = variance / (variance + md * md);
+
+                    smz = <span class="hljs-number">1.0</span> - max(lit_fact, <span class="hljs-built_in">pow</span>(smz, <span class="hljs-number">2000</span>));
+                    tm = tt.x * tt.y;
+                    color *= <span class="hljs-number">1.0f</span> - (MMM_ShadowDeep * smz * tm);
+                }
+            }
+        }
+        <span class="hljs-keyword">else</span>
+        {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">3</span>; i++)
+            {
+                <span class="hljs-keyword">if</span> (MMM_LightEnables[i])
+                {
+                    tt = uv[i].xyz;
+                    tt.xy = tt.xy / uv[i].w;
+                    texcoord = (<span class="hljs-number">1.0f</span> + tt.xy) * <span class="hljs-number">0.5f</span>;
+                    tt.xy = <span class="hljs-number">1.0f</span> - saturate((tt.xy * tt.xy - <span class="hljs-number">0.8f</span>) / <span class="hljs-number">0.2f</span>);
+
+                    d = tex2D(MMM_SelfShadowSampler[i], texcoord);
+                    smz = MMM_UnpackDepth(d) + <span class="hljs-number">0.00002</span>;
+
+                    <span class="hljs-keyword">if</span> (tt.z &gt; smz)
+                    {
+                        tm = tt.x * tt.y;
+                        color *= <span class="hljs-number">1.0f</span> - (MMM_ShadowDeep * tm);
+                    }
+
+                }
+            }
+        }
+    }
+    <span class="hljs-keyword">return</span> color;
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../chapter_1/Chapter.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 第一章">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"附录","level":"1.3","depth":1,"previous":{"title":"第一章","level":"1.2","depth":1,"path":"chapter_1/Chapter.MD","ref":"chapter_1/Chapter.MD","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter_extra/Chapter.MD","mtime":"2019-10-22T19:11:06.975Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-23T05:42:24.018Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
