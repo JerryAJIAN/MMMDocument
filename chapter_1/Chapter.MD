@@ -71,7 +71,7 @@
 
 &emsp;&emsp;在命令插件中，必须使用接口ICommandPlugin，只有这样MMM才能将你识别为命令插件。
 
-方法或属性|描述
+|方法或属性|描述|
 |---|---|
 |Guid GUID{get;}|插件的唯一识别标识，必须确保和其他的插件不同，建议随机生成！|
 |IWin32Window ApplicationForm { get; set; }|获取MMM窗口句柄，用来用于弹提示消息框之类的，不必要掌握，会抄个弹窗写法就行|
