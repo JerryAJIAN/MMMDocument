@@ -1,6 +1,7 @@
 # Summary
 
-* [Introduction](README.MD)
+* [封面](COVER.MD)
+* [说明](README.MD)
 * [第一章 MMM插件介绍](chapter_1/Chapter.MD)
     * [第一节 插件的作用](chapter_1/Chapter.MD#插件的作用)
     * [第二节 MMM留给我们的魔法咒语](chapter_1/Chapter.MD#MMM留给我们的魔法咒语)

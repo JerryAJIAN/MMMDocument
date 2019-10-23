@@ -1,0 +1,10 @@
+F:\MMMDocument\assert\HandStand\HandStand\bin\Release\HandStand.dll
+F:\MMMDocument\assert\HandStand\HandStand\bin\Release\HandStand.pdb
+F:\MMMDocument\assert\HandStand\HandStand\bin\Release\DxMath.dll
+F:\MMMDocument\assert\HandStand\HandStand\bin\Release\MikuMikuPlugin.dll
+F:\MMMDocument\assert\HandStand\HandStand\bin\Release\MikuMikuPlugin.xml
+F:\MMMDocument\assert\HandStand\HandStand\obj\Release\HandStand.csproj.CoreCompileInputs.cache
+F:\MMMDocument\assert\HandStand\HandStand\obj\Release\HandStand.csproj.CopyComplete
+F:\MMMDocument\assert\HandStand\HandStand\obj\Release\HandStand.dll
+F:\MMMDocument\assert\HandStand\HandStand\obj\Release\HandStand.pdb
+F:\MMMDocument\assert\HandStand\HandStand\obj\Release\HandStand.csprojAssemblyReference.cache
