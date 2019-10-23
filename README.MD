@@ -2,6 +2,9 @@
 * MikuMikuMoving插件编写的小说明
 * 希望能够帮助你快速走入MMM插件的大门
 
+你可以点击这个链接进入Gitbook页面：
+[MikuMikuMoving插件编写介绍](https://mengluwa.github.io/MMMDocument/)
+
 ![Mengluu](/头像.png)
 
 >作者：Mengluu
