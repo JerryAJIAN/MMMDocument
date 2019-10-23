@@ -3,7 +3,7 @@
 * 希望能够帮助你快速走入MMM插件的大门
 
 你可以点击这个链接进入Gitbook页面：
-[MikuMikuMoving插件编写介绍](https://mengluwa.github.io/MMMDocument/)
+[MikuMikuMoving插件编写介绍](http://secretofmenglu.top/)
 
 ![Mengluu](/头像.png)
 
