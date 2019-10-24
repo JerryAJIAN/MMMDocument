@@ -1,9 +1,0 @@
-E:\ExternalProgram\MikuMikuMoving64_v1292\PluginProject\TheFirst\TheFirst\bin\Release\TheFirst.dll
-E:\ExternalProgram\MikuMikuMoving64_v1292\PluginProject\TheFirst\TheFirst\bin\Release\TheFirst.pdb
-E:\ExternalProgram\MikuMikuMoving64_v1292\PluginProject\TheFirst\TheFirst\bin\Release\MikuMikuPlugin.dll
-E:\ExternalProgram\MikuMikuMoving64_v1292\PluginProject\TheFirst\TheFirst\bin\Release\MikuMikuPlugin.xml
-E:\ExternalProgram\MikuMikuMoving64_v1292\PluginProject\TheFirst\TheFirst\obj\Release\TheFirst.csprojAssemblyReference.cache
-E:\ExternalProgram\MikuMikuMoving64_v1292\PluginProject\TheFirst\TheFirst\obj\Release\TheFirst.csproj.CoreCompileInputs.cache
-E:\ExternalProgram\MikuMikuMoving64_v1292\PluginProject\TheFirst\TheFirst\obj\Release\TheFirst.csproj.CopyComplete
-E:\ExternalProgram\MikuMikuMoving64_v1292\PluginProject\TheFirst\TheFirst\obj\Release\TheFirst.dll
-E:\ExternalProgram\MikuMikuMoving64_v1292\PluginProject\TheFirst\TheFirst\obj\Release\TheFirst.pdb
