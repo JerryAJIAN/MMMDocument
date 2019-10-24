@@ -162,17 +162,17 @@
 
 &emsp;&emsp;打开VS，创建新项目，C#，类库（.Net Framework）。
 
-![创建新工程](/chapter_1/assert/创建插件工程.png)
+![创建新工程](assert/创建插件工程.png)
 
 &emsp;&emsp;刚刚建立好的工程一片空白，在开始编写插件之前，我们还需要做一些其他的准备工作。
 
 &emsp;&emsp;打开路径：MMM安装目录\System\x64\，如果是32位则为x32，将其中的MikuMikuPlugin.dll文件拷贝到一个你觉得方便查找的地方。
 
-![需要引用文件的位置](/chapter_1/assert/引用文件位置.png)
+![需要引用文件的位置](assert/引用文件位置.png)
 
 &emsp;&emsp;回到工程，点击上方菜单栏，项目，添加引用：
 
-![添加引用](/chapter_1/assert/添加引用.png)
+![添加引用](assert/添加引用.png)
 
 &emsp;&emsp;再点击浏览，将刚才拷贝出来的文件引用。以后如果要引用更多的文件，也是这个步骤，而要引用开发包中自带的文件的话，直接在引用中的程序集一栏中查询即可。
 
@@ -182,11 +182,11 @@
 
 &emsp;&emsp;回到之前我们讲过的部分，命令插件包含了GUID，ApplicationForm、Scene等部分，我们需要将他们一一写出。
 
-![命令插件接口](/chapter_1/assert/命令插件接口.png)
+![命令插件接口](assert/命令插件接口.png)
 
 &emsp;&emsp;这里根据格式写即可，类名自己定义。
 
-![GUID码](/chapter_1/assert/GUID.png)
+![GUID码](assert/GUID.png)
 
 &emsp;&emsp;GUID码，还记得吗，之前说的，这里必须和其他插件不同才行。
 
@@ -198,21 +198,21 @@
 
 &emsp;&emsp;这里直接使用MessageBox类来实现，如果有自己的想法的话可以自行修改：
 
-![Run方法](/chapter_1/assert/Run方法.png)
+![Run方法](assert/Run方法.png)
 
 &emsp;&emsp;第一个参数ApplicationForm也就是命令插件接口组成中的IWin32Window，代表MMM窗口本体。这句代码的意思是以MMM窗口本体为消息窗所有者，弹出一个内容为xxx的消息弹窗。
 
 &emsp;&emsp;写完代码之后，点击编译，生成，就可以在路径：工程目录\工程名\bin\Debug（如果选择Release模式则为Release）中找到你生成的插件啦！
 
-![生成文件的位置](/chapter_1/assert/生成文件.png)
+![生成文件的位置](assert/生成文件.png)
 
 &emsp;&emsp;将这个dll文件拷贝到路径：MMM安装目录\Plugins中，打开MMM，就可以在插件栏中找到我们的插件了。
 
-![插件载入完成](/chapter_1/assert/安装插件.png)
+![插件载入完成](assert/安装插件.png)
 
 &emsp;&emsp;点击按钮，就可以看到插件弹出的消息框啦！
 
-![弹出消息框](/chapter_1/assert/弹出消息框.png)
+![弹出消息框](assert/弹出消息框.png)
 
 &emsp;&emsp;大家可以将这个工程保留，以后需要做命令插件的话就拷贝一份，这样就不用麻烦每次都把每个方法属性再写一遍啦！
 
