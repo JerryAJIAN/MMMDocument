@@ -1,0 +1,1 @@
+git subtree pull --prefix book/_book origin gh-pages
