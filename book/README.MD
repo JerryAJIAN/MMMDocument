@@ -5,7 +5,7 @@
 你可以点击这个链接进入Gitbook页面：
 [MikuMikuMoving插件编写介绍](http://secretofmenglu.top/)
 
-![Mengluu](/头像.png)
+![Mengluu](头像.png)
 
 >作者：Mengluu
 
