@@ -68,6 +68,194 @@ namespace TheFirst
 }
 ````
 
+#### 官方RandBlink插件源码
+
+<span id="官方RandBlink插件源码"></span>
+
+````csharp
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+using MikuMikuPlugin;
+using DxMath;
+
+namespace RandomBlinkPlugin
+{
+    public class RandomBlinkPlugin : ICommandPlugin
+    {
+        /// <summary>
+        /// このプラグインのGUID
+        /// </summary>
+        public Guid GUID
+        {
+            get { return new Guid("693B76A5-589D-459D-844B-481489B0B41F"); }
+        }
+
+        /// <summary>
+        /// メインフォーム
+        /// MikuMikuMoving側から与えられます。
+        /// ダイアログ表示やメッセージ表示に使用してください。
+        /// </summary>
+        public IWin32Window ApplicationForm { get; set; }
+
+        /// <summary>
+        /// シーンオブジェクト
+        /// MikuMikuMoving側から与えられます。
+        /// MikuMikuMovingのモデルやアクセサリといったオブジェクトにアクセスできます。
+        /// </summary>
+        public Scene Scene { get; set; }
+
+        /// <summary>
+        /// プラグインの名前や作者名、プラグインの説明
+        /// </summary>
+        public string Description
+        {
+            get { return "Random Blink Plugin v0.2 by Mogg"; }
+        }
+
+        /// <summary>
+        /// ボタンに表示するアイコン画像(32x32)
+        /// nullだとデフォルト画像が表示されます。
+        /// </summary>
+        public Image Image
+        {
+            get { return Properties.Resources.RandomBlink_L; }
+        }
+
+        /// <summary>
+        /// 中コマンドバーに表示するアイコン画像(20x20)
+        /// nullだとデフォルト画像が表示されます。
+        /// </summary>
+        public Image SmallImage
+        {
+            get { return Properties.Resources.RandomBlink; }
+        }
+
+        /// <summary>
+        /// ボタンに表示するテキスト
+        /// 日本語環境で表示されるテキストです。改行する場合は Environment.NewLineを使用してください。
+        /// </summary>
+        public string Text
+        {
+            get { return "まばたき" + Environment.NewLine + "ランダム登録"; }
+        }
+
+        /// <summary>
+        /// ボタンに表示する英語テキスト
+        /// 日本以外の環境で表示されるテキストです。
+        /// </summary>
+        public string EnglishText
+        {
+            get { return "Random" + Environment.NewLine + "Blink"; }
+        }
+
+        /// <summary>
+        /// 実行
+        /// ここにボタンが押されたときの処理を記述します。
+        /// </summary>
+        public void Run(CommandArgs e)
+        {
+            //モデルがアクティブかどうか
+            if (Scene.ActiveModel != null)
+            {
+                using (RandomBlinkForm blinkDialog = new RandomBlinkForm())
+                {
+                    if (blinkDialog.ShowDialog(ApplicationForm) == DialogResult.OK)
+                    {
+                        //ダイアログから開始と終了フレームを取得する
+                        long start, end;
+                        if (blinkDialog.StartFrame < blinkDialog.EndFrame)
+                        {
+                            start = blinkDialog.StartFrame;
+                            end = blinkDialog.EndFrame;
+                        }
+                        else
+                        {
+                            start = blinkDialog.EndFrame;
+                            end = blinkDialog.StartFrame;
+                        }
+
+                        //まばたきモーフがあるかどうか
+                        if (Scene.ActiveModel.Morphs["まばたき"] != null)
+                        {
+                            //まばたきモーフの作成先
+                            List<MorphFrameData> morphlist = new List<MorphFrameData>();
+
+                            //最小間隔
+                            int min = (int)(Scene.KeyFramePerSec * 0.1);   //0.1秒
+                            //最大間隔
+                            int max = (int)(Scene.KeyFramePerSec * 3);   //3.0秒
+                            long current = start;
+
+                            //乱数
+                            Random rand = new Random(Environment.TickCount);
+
+                            //開始位置
+                            current += rand.Next(min, max);
+
+                            int count = 0;  //登録個数
+                            while (current + (int)(0.8 * Scene.KeyFramePerSec) + 1 < end)
+                            {
+                                //まばたき登録
+
+                                //最初のフレーム
+                                morphlist.Add(new MorphFrameData(current, 0.0f));
+                                current += (int)(0.2 * Scene.KeyFramePerSec);     //0.2秒
+
+                                //2つ目のフレーム
+                                morphlist.Add(new MorphFrameData(current, 1.0f));
+                                current += (int)(0.2 * Scene.KeyFramePerSec);     //0.2秒
+
+                                //3つ目のフレーム
+                                morphlist.Add(new MorphFrameData(current, 1.0f));
+                                current += (int)(0.2 * Scene.KeyFramePerSec);     //0.2秒
+
+                                //4つ目のフレーム
+                                morphlist.Add(new MorphFrameData(current, 0.0f));
+                                current += 1;
+
+                                count++;
+
+                                //開始位置
+                                current += rand.Next(min, max);
+                            }
+
+                            //作成したモーフフレームデータを登録する(同じフレームに既存キーフレームがあったら上書きされる)
+                            Scene.ActiveModel.Morphs["まばたき"].Frames.AddKeyFrame(morphlist);
+
+                            //結果をメッセージボックスで表示する
+                            if (Scene.Language == "ja")
+                                MessageBox.Show(ApplicationForm, count + "個のまばたきを登録しました", "登録完了", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            else
+                                MessageBox.Show(ApplicationForm, count + " blink is added.", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                //モデルがアクティブでない場合はメッセージを出して終了
+                if (Scene.Language == "ja")
+                    MessageBox.Show(ApplicationForm, "モデルが選択された状態で実行してください", "確認", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                else
+                    MessageBox.Show(ApplicationForm, "Please select a model.", "Note", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
+        /// <summary>
+        /// プラグイン破棄処理
+        /// もし解放しないといけないオブジェクトがある場合は、ここで解放してください。
+        /// </summary>
+        public void Dispose()
+        {
+
+        }
+    }
+}
+````
+
+
 #### MMM_EffectHeader文件
 
 <span id="MMM_EffectHeader文件"></span>

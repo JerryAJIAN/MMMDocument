@@ -12,4 +12,5 @@
 * [附录](chapter_extra/Chapter.MD)
     * [第一次实践源代码](chapter_extra/Chapter.MD#第一次实践源代码)
     * [MMM_EffectHeader文件](chapter_extra/Chapter.MD#MMM_EffectHeader文件)
+    * [官方RandBlink插件源码](chapter_extra/Chapter.MD#官方RandBlink插件源码)
 
